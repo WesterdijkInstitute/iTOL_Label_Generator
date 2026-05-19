@@ -166,6 +166,25 @@ ui <- page_sidebar(
           )
         )
       ),
+
+      # Heatmap tab
+      nav_panel(
+        "Heatmap",
+        icon = icon("table-cells"),
+        card_body(
+          div(class = "scrollable-tab-content",
+            div(class = "info-box",
+                p(icon("info-circle"), "Generate DATASET_HEATMAP annotations. Upload a matrix with IDs in the first column and sample/field names as headers.")
+            ),
+            
+            uiOutput("heatmap_settings_ui"),
+            
+            tags$hr(),
+            
+            uiOutput("heatmap_download_card")
+          )
+        )
+      ),
       
       # Label Styles tab
       nav_panel(

@@ -3478,7 +3478,391 @@ multibar_output <- reactive({
       )
     )
   })
-  
+
+  # ---- Heatmap tab: Settings UI ----
+  output$heatmap_settings_ui <- renderUI({
+    req(data())
+    
+    df <- isolate(data())
+    cols <- names(df)
+    
+    # Get current settings
+    current_id_col <- isolate(input$heatmap_id_col)
+    current_value_cols <- isolate(input$heatmap_value_cols)
+    
+    if(is.null(current_id_col)) current_id_col <- cols[1]
+    if(is.null(current_value_cols)) current_value_cols <- cols[-1]
+    
+    tagList(
+      card(
+        card_header("Column Selection"),
+        card_body(
+          selectInput(
+            "heatmap_id_col",
+            "ID Column",
+            choices = cols,
+            selected = current_id_col,
+            width = "250px"
+          ),
+          div(class = "help-text",
+              "Column containing the identifiers (e.g., sample names)"),
+          
+          tags$br(),
+          
+          selectizeInput(
+            "heatmap_value_cols",
+            "Value Columns (fields for heatmap)",
+            choices = cols,
+            selected = current_value_cols,
+            multiple = TRUE,
+            options = list(
+              placeholder = 'Select columns with numeric values',
+              plugins = list('remove_button')
+            )
+          ),
+          div(class = "help-text",
+              "Columns containing numeric values to display as heatmap cells")
+        )
+      ),
+      
+      card(
+        card_header("Dataset Label"),
+        card_body(
+          textInput(
+            "heatmap_dataset_label",
+            NULL,
+            value = isolate(input$heatmap_dataset_label) %||% "heatmap",
+            placeholder = "Enter dataset label"
+          ),
+          div(class = "help-text",
+              "Label for this heatmap dataset")
+        )
+      ),
+      
+      card(
+        card_header("Color Settings"),
+        card_body(
+          colourInput(
+            "heatmap_color_min",
+            "Minimum Value Color",
+            value = isolate(input$heatmap_color_min) %||% "#ff0000",
+            showColour = "both",
+            palette = "square",
+            returnName = FALSE
+          ),
+          
+          checkboxInput(
+            "heatmap_use_mid_color",
+            "Use midpoint color (3-color gradient)",
+            value = isolate(input$heatmap_use_mid_color) %||% FALSE
+          ),
+          
+          conditionalPanel(
+            condition = "input.heatmap_use_mid_color",
+            colourInput(
+              "heatmap_color_mid",
+              "Midpoint Value Color",
+              value = isolate(input$heatmap_color_mid) %||% "#ffff00",
+              showColour = "both",
+              palette = "square",
+              returnName = FALSE
+            )
+          ),
+          
+          colourInput(
+            "heatmap_color_max",
+            "Maximum Value Color",
+            value = isolate(input$heatmap_color_max) %||% "#0000ff",
+            showColour = "both",
+            palette = "square",
+            returnName = FALSE
+          ),
+          
+          colourInput(
+            "heatmap_color_nan",
+            "Color for Missing Values (NA)",
+            value = isolate(input$heatmap_color_nan) %||% "#000000",
+            showColour = "both",
+            palette = "square",
+            returnName = FALSE
+          )
+        )
+      ),
+      
+      card(
+        card_header("Display Options"),
+        card_body(
+          numericInput(
+            "heatmap_strip_width",
+            "Cell Width",
+            value = isolate(input$heatmap_strip_width) %||% 25,
+            min = 5,
+            max = 200,
+            step = 1,
+            width = "150px"
+          ),
+          div(class = "help-text",
+              "Width of individual heatmap cells in pixels"),
+          
+          tags$hr(),
+          
+          checkboxInput(
+            "heatmap_show_labels",
+            "Show field labels",
+            value = isolate(input$heatmap_show_labels) %||% TRUE
+          ),
+          
+          checkboxInput(
+            "heatmap_auto_legend",
+            "Automatically create legend",
+            value = isolate(input$heatmap_auto_legend) %||% TRUE
+          ),
+          
+          tags$hr(),
+          
+          # Advanced settings
+          tags$details(
+            tags$summary(
+              style = "cursor: pointer; font-weight: 600; color: #2C5F8D; margin: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;",
+              icon("cog"),
+              "Advanced iTOL Settings"
+            ),
+            
+            div(
+              style = "padding: 1rem; background-color: #f8f9fa; border-radius: 0.25rem; margin-top: 0.5rem; border: 1px solid #dee2e6;",
+              
+              tags$h6(style = "color: #2C5F8D;", "Border Settings"),
+              
+              div(
+                style = "margin-bottom: 1rem;",
+                numericInput(
+                  "heatmap_border_width",
+                  "Border Width",
+                  value = isolate(input$heatmap_border_width) %||% 0,
+                  min = 0,
+                  max = 10,
+                  step = 0.5,
+                  width = "150px"
+                ),
+                div(class = "help-text",
+                    "Width of border around cells (0 = no border)")
+              ),
+              
+              conditionalPanel(
+                condition = "input.heatmap_border_width > 0",
+                div(
+                  style = "margin-bottom: 1rem;",
+                  colourInput(
+                    "heatmap_border_color",
+                    "Border Color",
+                    value = isolate(input$heatmap_border_color) %||% "#0000ff",
+                    showColour = "both",
+                    palette = "square",
+                    returnName = FALSE
+                  )
+                )
+              ),
+              
+              tags$hr(),
+              
+              tags$h6(style = "color: #2C5F8D;", "Label Settings"),
+              
+              conditionalPanel(
+                condition = "input.heatmap_show_labels",
+                
+                div(
+                  style = "margin-bottom: 1rem;",
+                  numericInput(
+                    "heatmap_label_size_factor",
+                    "Label Size Factor",
+                    value = isolate(input$heatmap_label_size_factor) %||% 1,
+                    min = 0.1,
+                    max = 5,
+                    step = 0.1,
+                    width = "150px"
+                  )
+                ),
+                
+                div(
+                  style = "margin-bottom: 1rem;",
+                  numericInput(
+                    "heatmap_label_rotation",
+                    "Label Rotation (degrees)",
+                    value = isolate(input$heatmap_label_rotation) %||% 0,
+                    min = -180,
+                    max = 180,
+                    step = 1,
+                    width = "150px"
+                  )
+                ),
+                
+                div(
+                  style = "margin-bottom: 1rem;",
+                  numericInput(
+                    "heatmap_label_shift",
+                    "Label Shift",
+                    value = isolate(input$heatmap_label_shift) %||% 0,
+                    min = -200,
+                    max = 200,
+                    step = 1,
+                    width = "150px"
+                  )
+                )
+              ),
+              
+              tags$hr(),
+              
+              tags$h6(style = "color: #2C5F8D;", "Spacing"),
+              
+              div(
+                style = "margin-bottom: 1rem;",
+                numericInput(
+                  "heatmap_margin",
+                  "Left Margin",
+                  value = isolate(input$heatmap_margin) %||% 0,
+                  min = -200,
+                  max = 200,
+                  step = 1,
+                  width = "150px"
+                ),
+                div(class = "help-text",
+                    "Spacing to next dataset (can be negative)")
+              )
+            )
+          )
+        )
+      )
+    )
+  })
+
+  # ---- Generate heatmap output ----
+  heatmap_output <- reactive({
+    req(data(), input$heatmap_id_col, input$heatmap_value_cols)
+    
+    if(length(input$heatmap_value_cols) < 1) return(NULL)
+    
+    df <- data()
+    id_col <- input$heatmap_id_col
+    value_cols <- input$heatmap_value_cols
+    
+    # Get settings
+    heatmap_dataset_label <- input$heatmap_dataset_label %||% "heatmap"
+    heatmap_color_min <- input$heatmap_color_min %||% "#ff0000"
+    heatmap_color_max <- input$heatmap_color_max %||% "#0000ff"
+    heatmap_color_mid <- input$heatmap_color_mid %||% "#ffff00"
+    heatmap_use_mid_color <- input$heatmap_use_mid_color %||% FALSE
+    heatmap_color_nan <- input$heatmap_color_nan %||% "#000000"
+    heatmap_strip_width <- input$heatmap_strip_width %||% 25
+    heatmap_show_labels <- input$heatmap_show_labels %||% TRUE
+    heatmap_auto_legend <- input$heatmap_auto_legend %||% TRUE
+    heatmap_border_width <- input$heatmap_border_width %||% 0
+    heatmap_border_color <- input$heatmap_border_color %||% "#0000ff"
+    heatmap_label_size_factor <- input$heatmap_label_size_factor %||% 1
+    heatmap_label_rotation <- input$heatmap_label_rotation %||% 0
+    heatmap_label_shift <- input$heatmap_label_shift %||% 0
+    heatmap_margin <- input$heatmap_margin %||% 0
+    
+    # Build iTOL DATASET_HEATMAP format
+    content <- c("DATASET_HEATMAP")
+    content <- c(content, "SEPARATOR TAB")
+    content <- c(content, paste("DATASET_LABEL", heatmap_dataset_label, sep = "\t"))
+    content <- c(content, paste("COLOR", heatmap_color_max, sep = "\t"))
+    content <- c(content, "")
+    
+    # Field labels
+    content <- c(content, paste("FIELD_LABELS", paste(value_cols, collapse = "\t"), sep = "\t"))
+    content <- c(content, "")
+    
+    # Color settings
+    content <- c(content, paste("COLOR_MIN", heatmap_color_min, sep = "\t"))
+    content <- c(content, paste("COLOR_MAX", heatmap_color_max, sep = "\t"))
+    if(heatmap_use_mid_color) {
+      content <- c(content, "USE_MID_COLOR\t1")
+      content <- c(content, paste("COLOR_MID", heatmap_color_mid, sep = "\t"))
+    }
+    content <- c(content, paste("COLOR_NAN", heatmap_color_nan, sep = "\t"))
+    content <- c(content, "")
+    
+    # Display settings
+    content <- c(content, paste("STRIP_WIDTH", heatmap_strip_width, sep = "\t"))
+    content <- c(content, paste("SHOW_LABELS", if(heatmap_show_labels) "1" else "0", sep = "\t"))
+    content <- c(content, paste("AUTO_LEGEND", if(heatmap_auto_legend) "1" else "0", sep = "\t"))
+    content <- c(content, "")
+    
+    # Border settings
+    if(heatmap_border_width > 0) {
+      content <- c(content, paste("BORDER_WIDTH", heatmap_border_width, sep = "\t"))
+      content <- c(content, paste("BORDER_COLOR", heatmap_border_color, sep = "\t"))
+      content <- c(content, "")
+    }
+    
+    # Label settings
+    if(heatmap_show_labels) {
+      content <- c(content, paste("SIZE_FACTOR", heatmap_label_size_factor, sep = "\t"))
+      content <- c(content, paste("LABEL_ROTATION", heatmap_label_rotation, sep = "\t"))
+      content <- c(content, paste("LABEL_SHIFT", heatmap_label_shift, sep = "\t"))
+      content <- c(content, "")
+    }
+    
+    # Margin
+    if(heatmap_margin != 0) {
+      content <- c(content, paste("MARGIN", heatmap_margin, sep = "\t"))
+      content <- c(content, "")
+    }
+    
+    content <- c(content, "DATA")
+    
+    # Data: ID followed by numeric values for each field
+    for(i in 1:nrow(df)) {
+      id <- as.character(df[[id_col]][i])
+      
+      # Get values for each field, converting to numeric if needed
+      values <- sapply(value_cols, function(col) {
+        val <- df[[col]][i]
+        
+        # Convert to numeric if not already
+        if(!is.numeric(val)) {
+          val <- suppressWarnings(as.numeric(val))
+        }
+        
+        # Return "X" for NA values, otherwise the numeric value
+        if(is.na(val)) {
+          return("X")
+        } else {
+          return(as.character(val))
+        }
+      })
+      
+      content <- c(content, paste(c(id, values), collapse = "\t"))
+    }
+    
+    return(paste(content, collapse = "\n"))
+  })
+
+  # ---- Heatmap download card ----
+  output$heatmap_download_card <- renderUI({
+    req(heatmap_output())
+    
+    card(
+      card_header("Download Heatmap Annotation"),
+      card_body(
+        centered_download_button(
+          "download_heatmap",
+          "Download Heatmap File"
+        )
+      )
+    )
+  })
+
+  # Heatmap download
+  output$download_heatmap <- downloadHandler(
+    filename = function() {
+      paste0(input$dataset_label, "_heatmap.txt")
+    },
+    content = function(file) {
+      writeLines(heatmap_output(), file)
+    }
+  )
   # ---- Multi-bar download handler ----
   output$download_multibar <- downloadHandler(
     filename = function() {
