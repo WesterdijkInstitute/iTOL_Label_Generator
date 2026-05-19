@@ -3542,41 +3542,86 @@ multibar_output <- reactive({
       card(
         card_header("Color Settings"),
         card_body(
-          colourInput(
-            "heatmap_color_min",
-            "Minimum Value Color",
-            value = isolate(input$heatmap_color_min) %||% "#0099FF",
-            showColour = "both",
-            palette = "square",
-            returnName = FALSE
+          # Color mode selection
+          radioGroupButtons(
+            "heatmap_color_mode",
+            "Color Mode",
+            choices = c("ColorBrewer" = "ColorBrewer", 
+                        "Manual" = "Manual"),
+            selected = isolate(input$heatmap_color_mode) %||% "ColorBrewer",
+            justified = FALSE,
+            size = "xs",
+            status = "primary",
+            width = "100%",
+            individual = TRUE
           ),
           
-          checkboxInput(
-            "heatmap_use_mid_color",
-            "Use midpoint color (3-color gradient)",
-            value = isolate(input$heatmap_use_mid_color) %||% FALSE
-          ),
-          
+          # ColorBrewer palette selector
           conditionalPanel(
-            condition = "input.heatmap_use_mid_color",
+            condition = "input.heatmap_color_mode == 'ColorBrewer'",
+            selectInput(
+              "heatmap_brewer_palette",
+              "Select Palette",
+              choices = c(
+                "Select a palette" = "",
+                get_brewer_palettes()$Sequential,
+                get_brewer_palettes()$Diverging
+              ),
+              selected = isolate(input$heatmap_brewer_palette) %||% "RdYlBu",
+              width = "200px"
+            ),
+            div(class = "help-text",
+                "Sequential palettes work well for values from low to high. Diverging palettes work well when you have a meaningful midpoint."),
+            
+            checkboxInput(
+              "heatmap_reverse_palette",
+              "Reverse palette colors",
+              value = isolate(input$heatmap_reverse_palette) %||% FALSE
+            )
+          ),
+          
+          # Manual color selection
+          conditionalPanel(
+            condition = "input.heatmap_color_mode == 'Manual'",
+            
             colourInput(
-              "heatmap_color_mid",
-              "Midpoint Value Color",
-              value = isolate(input$heatmap_color_mid) %||% "#ffff00",
+              "heatmap_color_max",
+              "Maximum Value Color (high values)",
+              value = isolate(input$heatmap_color_max) %||% "#FF3D3D",
+              showColour = "both",
+              palette = "square",
+              returnName = FALSE
+            ),
+            
+            checkboxInput(
+              "heatmap_use_mid_color",
+              "Use midpoint color (3-color gradient)",
+              value = isolate(input$heatmap_use_mid_color) %||% FALSE
+            ),
+            
+            conditionalPanel(
+              condition = "input.heatmap_use_mid_color",
+              colourInput(
+                "heatmap_color_mid",
+                "Midpoint Value Color",
+                value = isolate(input$heatmap_color_mid) %||% "#ffff00",
+                showColour = "both",
+                palette = "square",
+                returnName = FALSE
+              )
+            ),
+            
+            colourInput(
+              "heatmap_color_min",
+              "Minimum Value Color (low values)",
+              value = isolate(input$heatmap_color_min) %||% "#0099FF",
               showColour = "both",
               palette = "square",
               returnName = FALSE
             )
           ),
           
-          colourInput(
-            "heatmap_color_max",
-            "Maximum Value Color",
-            value = isolate(input$heatmap_color_max) %||% "#FF3D3D",
-            showColour = "both",
-            palette = "square",
-            returnName = FALSE
-          ),
+          tags$hr(),
           
           colourInput(
             "heatmap_color_nan",
@@ -3585,6 +3630,20 @@ multibar_output <- reactive({
             showColour = "both",
             palette = "square",
             returnName = FALSE
+          ),
+          
+          tags$hr(),
+          
+          # Palette preview/reference
+          conditionalPanel(
+            condition = "input.heatmap_color_mode == 'ColorBrewer'",
+            tags$details(
+              tags$summary(
+                style = "cursor: pointer; font-weight: 600; color: #2C5F8D; margin: 0.5rem 0;",
+                "View ColorBrewer Palette Reference"
+              ),
+              plotOutput("brewer_plot_heatmap", height = "600px")
+            )
           )
         )
       ),
@@ -3736,10 +3795,32 @@ multibar_output <- reactive({
     
     # Get settings
     heatmap_dataset_label <- input$heatmap_dataset_label %||% "heatmap"
-    heatmap_color_min <- input$heatmap_color_min %||% "#0099FF"
-    heatmap_color_max <- input$heatmap_color_max %||% "#FF3D3D"
-    heatmap_color_mid <- input$heatmap_color_mid %||% "#ffff00"
-    heatmap_use_mid_color <- input$heatmap_use_mid_color %||% FALSE
+    heatmap_color_mode <- input$heatmap_color_mode %||% "ColorBrewer"
+
+    # Determine colors based on mode
+    if(heatmap_color_mode == "ColorBrewer") {
+      brewer_pal <- input$heatmap_brewer_palette %||% "RdYlBu"
+      reverse_palette <- input$heatmap_reverse_palette %||% FALSE
+      
+      # Get 3 colors from the palette (low, mid, high)
+      pal_colors <- suppressWarnings(brewer.pal(3, brewer_pal))
+      
+      if(reverse_palette) {
+        pal_colors <- rev(pal_colors)
+      }
+      
+      heatmap_color_min <- pal_colors[1]
+      heatmap_color_mid <- pal_colors[2]
+      heatmap_color_max <- pal_colors[3]
+      heatmap_use_mid_color <- TRUE  # Always use 3-color gradient for ColorBrewer
+    } else {
+      # Manual mode
+      heatmap_color_min <- input$heatmap_color_min %||% "#0099FF"
+      heatmap_color_max <- input$heatmap_color_max %||% "#FF3D3D"
+      heatmap_color_mid <- input$heatmap_color_mid %||% "#ffff00"
+      heatmap_use_mid_color <- input$heatmap_use_mid_color %||% FALSE
+    }
+    
     heatmap_color_nan <- input$heatmap_color_nan %||% "#000000"
     heatmap_strip_width <- input$heatmap_strip_width %||% 30
     heatmap_auto_legend <- input$heatmap_auto_legend %||% TRUE
@@ -3762,8 +3843,8 @@ multibar_output <- reactive({
     content <- c(content, "")
     
     # Color settings
-    content <- c(content, paste("COLOR_MIN", heatmap_color_min, sep = "\t"))
     content <- c(content, paste("COLOR_MAX", heatmap_color_max, sep = "\t"))
+    content <- c(content, paste("COLOR_MIN", heatmap_color_min, sep = "\t"))
     if(heatmap_use_mid_color) {
       content <- c(content, "USE_MID_COLOR\t1")
       content <- c(content, paste("COLOR_MID", heatmap_color_mid, sep = "\t"))
@@ -3838,6 +3919,20 @@ multibar_output <- reactive({
       )
     )
   })
+  # ---- ColorBrewer plot for heatmap tab ----
+  output$brewer_plot_heatmap <- renderPlot({
+    # Create layout for two separate sections
+    par(mfrow = c(2, 1), mar = c(1, 10, 3, 2))
+    
+    # Sequential palettes
+    display.brewer.all(type = "seq")
+    title("Sequential Palettes", cex.main = 1.2, font.main = 2)
+    
+    # Diverging palettes
+    display.brewer.all(type = "div")
+    title("Diverging Palettes", cex.main = 1.2, font.main = 2)
+    
+  }, res = 96, height = 600)
 
   # Heatmap download
   output$download_heatmap <- downloadHandler(
