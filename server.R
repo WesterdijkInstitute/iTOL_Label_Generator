@@ -3545,7 +3545,7 @@ multibar_output <- reactive({
           colourInput(
             "heatmap_color_min",
             "Minimum Value Color",
-            value = isolate(input$heatmap_color_min) %||% "#ff0000",
+            value = isolate(input$heatmap_color_min) %||% "#0099FF",
             showColour = "both",
             palette = "square",
             returnName = FALSE
@@ -3572,7 +3572,7 @@ multibar_output <- reactive({
           colourInput(
             "heatmap_color_max",
             "Maximum Value Color",
-            value = isolate(input$heatmap_color_max) %||% "#0000ff",
+            value = isolate(input$heatmap_color_max) %||% "#FF3D3D",
             showColour = "both",
             palette = "square",
             returnName = FALSE
@@ -3595,7 +3595,7 @@ multibar_output <- reactive({
           numericInput(
             "heatmap_strip_width",
             "Cell Width",
-            value = isolate(input$heatmap_strip_width) %||% 25,
+            value = isolate(input$heatmap_strip_width) %||% 30,
             min = 5,
             max = 200,
             step = 1,
@@ -3603,14 +3603,6 @@ multibar_output <- reactive({
           ),
           div(class = "help-text",
               "Width of individual heatmap cells in pixels"),
-          
-          tags$hr(),
-          
-          checkboxInput(
-            "heatmap_show_labels",
-            "Show field labels",
-            value = isolate(input$heatmap_show_labels) %||% TRUE
-          ),
           
           checkboxInput(
             "heatmap_auto_legend",
@@ -3655,7 +3647,7 @@ multibar_output <- reactive({
                   colourInput(
                     "heatmap_border_color",
                     "Border Color",
-                    value = isolate(input$heatmap_border_color) %||% "#0000ff",
+                    value = isolate(input$heatmap_border_color) %||% "#0099FF",
                     showColour = "both",
                     palette = "square",
                     returnName = FALSE
@@ -3667,8 +3659,6 @@ multibar_output <- reactive({
               
               tags$h6(style = "color: #2C5F8D;", "Label Settings"),
               
-              conditionalPanel(
-                condition = "input.heatmap_show_labels",
                 
                 div(
                   style = "margin-bottom: 1rem;",
@@ -3707,8 +3697,7 @@ multibar_output <- reactive({
                     step = 1,
                     width = "150px"
                   )
-                )
-              ),
+                ),
               
               tags$hr(),
               
@@ -3747,13 +3736,12 @@ multibar_output <- reactive({
     
     # Get settings
     heatmap_dataset_label <- input$heatmap_dataset_label %||% "heatmap"
-    heatmap_color_min <- input$heatmap_color_min %||% "#ff0000"
-    heatmap_color_max <- input$heatmap_color_max %||% "#0000ff"
+    heatmap_color_min <- input$heatmap_color_min %||% "#0099FF"
+    heatmap_color_max <- input$heatmap_color_max %||% "#FF3D3D"
     heatmap_color_mid <- input$heatmap_color_mid %||% "#ffff00"
     heatmap_use_mid_color <- input$heatmap_use_mid_color %||% FALSE
     heatmap_color_nan <- input$heatmap_color_nan %||% "#000000"
-    heatmap_strip_width <- input$heatmap_strip_width %||% 25
-    heatmap_show_labels <- input$heatmap_show_labels %||% TRUE
+    heatmap_strip_width <- input$heatmap_strip_width %||% 30
     heatmap_auto_legend <- input$heatmap_auto_legend %||% TRUE
     heatmap_border_width <- input$heatmap_border_width %||% 0
     heatmap_border_color <- input$heatmap_border_color %||% "#0000ff"
@@ -3785,7 +3773,6 @@ multibar_output <- reactive({
     
     # Display settings
     content <- c(content, paste("STRIP_WIDTH", heatmap_strip_width, sep = "\t"))
-    content <- c(content, paste("SHOW_LABELS", if(heatmap_show_labels) "1" else "0", sep = "\t"))
     content <- c(content, paste("AUTO_LEGEND", if(heatmap_auto_legend) "1" else "0", sep = "\t"))
     content <- c(content, "")
     
@@ -3797,12 +3784,10 @@ multibar_output <- reactive({
     }
     
     # Label settings
-    if(heatmap_show_labels) {
       content <- c(content, paste("SIZE_FACTOR", heatmap_label_size_factor, sep = "\t"))
       content <- c(content, paste("LABEL_ROTATION", heatmap_label_rotation, sep = "\t"))
       content <- c(content, paste("LABEL_SHIFT", heatmap_label_shift, sep = "\t"))
       content <- c(content, "")
-    }
     
     # Margin
     if(heatmap_margin != 0) {
