@@ -510,6 +510,11 @@ heatmap_output <- reactive({
     
     # Get values for each field, converting to numeric if needed
     values <- sapply(value_cols, function(col) {
+      # Check if column exists
+      if(!col %in% names(df)) {
+        return("X")
+      }
+      
       val <- df[[col]][i]
       
       # Convert to numeric if not already
@@ -518,7 +523,7 @@ heatmap_output <- reactive({
       }
       
       # Return "X" for NA values, otherwise the numeric value
-      if(is.na(val)) {
+      if(length(val) == 0 || is.na(val)) {
         return("X")
       } else {
         return(as.character(val))

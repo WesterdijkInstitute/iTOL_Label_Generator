@@ -1,219 +1,21 @@
 Sample id	Latitude	Longitude	Year	Country	Genotype cyp51A	Mating-type	Source	Itraconazole resistance	Itraconazole MIC	Voriconazole MIC	Posaconazole MIC	DAPCcluster
-ARAF001	53800755	-1549077	2012	UK	TR34/L98H	MAT1-1	Clinical	Resistant	>16	1	0.5	Cluster 1
-ARAF002	53800755	-1549077	2012	UK	TR34/L98H	MAT1-1	Clinical	Resistant	>16	1	0.5	Cluster 1
-ARAF003	53800755	-1549077	2009	UK	Wildtype	MAT1-2	Clinical	Susceptible	1	0.25	0.06	Cluster 2
-ARAF004	53800755	-1549077	2012	UK	Wildtype	MAT1-1	Clinical	Susceptible	1	0.5	0.25	Cluster 1
-ARAF005	53800755	-1549077	2012	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.5	0.125	0.06	Cluster 2
-ARAF006	53800755	-1549077	2012	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.5	0.5	0.06	Cluster 1
-C1	51484577	-3185252	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 3
-C10	51839927	-4151486	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	8	0.5	Cluster 1
-C100	5082253	-137163	2014	UK	TR34/L98H	MAT1-2	Clinical	Resistant	16	4	NA	Cluster 3
-C103	51507351	-127758	2015	UK	TR34/L98H	MAT1-2	Clinical	Susceptible	1	2	NA	Cluster 3
-C104	55953252	-3188267	2015	UK	TR34/L98H	MAT1-1	Clinical	Resistant	>16	0.5	1	Cluster 3
-C105	55953252	-3188267	2015	UK	TR34/L98H	MAT1-2	Clinical	Resistant	>16	4	NA	Cluster 1
-C106	51507351	-127758	2014	UK	TR34/L98H	MAT1-2	Clinical	Resistant	2	4	NA	Cluster 1
-C107	51507351	-127758	2015	UK	TR34/L98H	MAT1-2	Clinical	Susceptible	1	4	NA	Cluster 1
-C108	52205337	121817	2015	UK	TR34/L98H	MAT1-2	Clinical	Resistant	16	1	NA	Cluster 3
 C109	53408371	-2991573	2015	UK	TR34/L98H	MAT1-1	Clinical	Resistant	>16	1	NA	Cluster 2
 C11	51839927	-4151486	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.25	Cluster 1
-C110	51481581	-317909	2015	UK	TR34/L98H	MAT1-2	Clinical	Resistant	>16	1	NA	Cluster 3
-C111	51450179	-2583294	2016	UK	TR34/L98H	MAT1-1	Clinical	Resistant	16	2	NA	Cluster 1
-C112	51518222	-58518	2016	UK	TR34/L98H	MAT1-2	Clinical	Resistant	16	2	NA	Cluster 3
-C113	51650746	-215259	2016	UK	Wildtype	MAT1-1	Clinical	Susceptible	NA	0.25	NA	Cluster 2
-C114	55922125	-3134835	2015	UK	TR34/L98H	MAT1-1	Clinical	Resistant	>16	2	NA	Cluster 3
-C115	51486555	-219482	2017	UK	TR34/L98H	MAT1-1	Clinical	Resistant	4	1	0.25	Cluster 3
-C117	51481581	-317909	2016	UK	Wildtype	MAT1-2	Clinical	Susceptible	1	2	NA	Cluster 2
-C118	52486243	-1890401	2016	UK	Wildtype	MAT1-2	Clinical	Resistant	8	1	NA	Cluster 2
-C119	52205337	121817	2015	UK	TR34/L98H	MAT1-2	Clinical	Resistant	16	1	NA	Cluster 3
 C12	51839927	-4151486	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	4	0.25	Cluster 3
-C120	52636878	-1139759	2016	UK	G54R	MAT1-1	Clinical	Resistant	>16	0.125	NA	Cluster 2
-C121	51486555	-219482	2015	UK	G54E	MAT1-1	Clinical	Resistant	>16	0.25	0.5	Cluster 1
-C122	51525083	-136355	2015	UK	TR34/L98H	MAT1-2	Clinical	Resistant	>16	2	NA	Cluster 1
-C123	51521879	-121042	2016	UK	TR34/L98H	MAT1-2	Clinical	Resistant	>16	2	0.25	Cluster 3
-C124	51488709	-170508	2015	UK	G54W	MAT1-1	Clinical	Resistant	>16	0.125	4	Cluster 2
-C125	51488709	-170508	2015	UK	TR34/L98H	MAT1-2	Clinical	Resistant	>16	2	2	Cluster 3
-C126	51488709	-170508	2015	UK	G54W	MAT1-1	Clinical	Resistant	>16	0.03	2	Cluster 2
 C127	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Resistant	>16	0.25	0.125	Cluster 2
-C128	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Resistant	>16	2	1	Cluster 2
-C129	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Resistant	8	2	0.5	Cluster 2
-C13	51418406	-3370837	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 1
 C130	51488709	-170508	2015	UK	G54W	MAT1-2	Clinical	Resistant	>16	0.125	8	Cluster 2
 C131	51488709	-170508	2015	UK	G54W	MAT1-2	Clinical	Resistant	>16	0.125	16	Cluster 2
-C132	51488709	-170508	2015	UK	G54W	MAT1-2	Clinical	Resistant	>16	0.125	8	Cluster 2
-C133	51488709	-170508	2015	UK	TR34/L98H	MAT1-2	Clinical	Resistant	>16	2	2	Cluster 3
 C134	51488709	-170508	2015	UK	TR34/L98H	MAT1-1	Clinical	Resistant	16	2	1	Cluster 2
-C135	51488709	-170508	2015	UK	G54W	MAT1-2	Clinical	Resistant	>16	0.125	16	Cluster 2
-C136	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Resistant	>16	2	2	Cluster 2
-C137	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Resistant	>16	2	2	Cluster 2
-C138	51488709	-170508	2015	UK	P216L	MAT1-1	Clinical	Resistant	>16	0.25	2	Cluster 2
-C139	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Resistant	>16	2	1	Cluster 2
-C14	51418406	-3370837	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	>8	0.5	Cluster 1
-C140	51488709	-170508	2015	UK	G54W	MAT1-1	Clinical	Resistant	>16	0.125	16	Cluster 2
 C141	51488709	-170508	2015	UK	TR34/L98H	MAT1-1	Clinical	Resistant	16	1	0.25	Cluster 2
-C142	51488709	-170508	2015	UK	G54W	MAT1-1	Clinical	Resistant	>16	0.06	0.25	Cluster 1
-C143	51488709	-170508	2015	UK	TR34/L98H	MAT1-2	Clinical	Resistant	16	2	0.5	Cluster 3
 C144	51488709	-170508	2015	UK	TR34/L98H	MAT1-2	Clinical	Resistant	>16	2	0.25	Cluster 1
-C145	51488709	-170508	2015	UK	P216L	MAT1-2	Clinical	Resistant	>16	0.125	0.5	Cluster 2
-C146	53800755	-1549077	2009	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.5	0.125	0.03	Cluster 2
 C147	53800755	-1549077	2009	UK	Wildtype	MAT1-2	Clinical	Susceptible	1	0.125	0.03	Cluster 2
-C148	53800755	-1549077	2009	UK	Wildtype	MAT1-2	Clinical	Susceptible	2	0.125	0.03	Cluster 2
 C149	53800755	-1549077	2009	UK	TR34/L98H	MAT1-1	Clinical	Resistant	>16	0.25	0.125	Cluster 1
-C15	51418406	-3370837	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	8	<0.5	Cluster 1
-C150	53800755	-1549077	2009	UK	TR34/L98H	MAT1-1	Clinical	Resistant	16	0.25	0.125	Cluster 1
-C151	53800755	-1549077	2009	UK	TR34/L98H	MAT1-1	Clinical	Resistant	>16	0.25	0.125	Cluster 1
-C152	53800755	-1549077	2009	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.5	0.125	0.03	Cluster 2
-C153	53800755	-1549077	2009	UK	Wildtype	MAT1-2	Clinical	Susceptible	1	0.125	0.03	Cluster 2
-C154	53800755	-1549077	2009	UK	Wildtype	MAT1-2	Clinical	Susceptible	1	0.125	0.03	Cluster 2
-C155	51486555	-219482	2016	UK	TR34/L98H/T289A/I364V/G448S	MAT1-2	Clinical	Resistant	16	>16	4	Cluster 1
-C156	51486555	-219482	2016	UK	TR34/L98H/T289A/I364V/G448S	MAT1-2	Clinical	Resistant	16	>16	4	Cluster 1
-C157	51486555	-219482	2016	UK	TR34/L98H/T289A/I364V/G448S	MAT1-2	Clinical	Resistant	16	>16	4	Cluster 1
 C158	51486555	-219482	2016	UK	TR34/L98H/T289A/I364V/G448S	MAT1-2	Clinical	Resistant	16	>16	4	Cluster 1
 C159	51486555	-219482	2016	UK	TR34/L98H	MAT1-2	Clinical	Resistant	>16	2	0.5	Cluster 1
-C16	51474035	-3479485	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 3
-C160	51486555	-219482	2016	UK	TR34/L98H	MAT1-2	Clinical	Resistant	>16	2	0.5	Cluster 1
-C161	51486555	-219482	2017	UK	TR34/L98H	MAT1-1	Clinical	Resistant	4	0.5	0.125	Cluster 3
-C162	51486555	-219482	2015	UK	Wildtype	MAT1-1	Clinical	Resistant	2	2	1	Cluster 1
-C163	51486555	-219482	2015	UK	G54W	MAT1-1	Clinical	Resistant	>16	1	>16	Cluster 1
-C164	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Resistant	2	1	0.125	Cluster 2
-C165	51488709	-170508	2014	UK	Wildtype	MAT1-1	Clinical	Resistant	2	0.5	0.125	Cluster 2
-C166	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Susceptible	1	0.25	0.06	Cluster 2
-C167	51488709	-170508	2015	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C168	51488709	-170508	2016	UK	Wildtype	MAT1-1	Clinical	Resistant	2	0.25	0.03	Cluster 2
-C169	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.06	0.015	Cluster 2
-C17	51474035	-3479485	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 3
-C170	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.06	0.015	Cluster 2
-C171	51488709	-170508	2015	UK	TR34/L98H	MAT1-2	Clinical	Resistant	16	0.5	0.25	Cluster 1
-C172	51488709	-170508	2016	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C173	51488709	-170508	2015	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.06	0.015	Cluster 2
-C174	51488709	-170508	2015	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C175	51488709	-170508	2016	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C176	51488709	-170508	2016	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C177	51488709	-170508	2015	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.125	0.03	Cluster 1
-C178	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C179	51488709	-170508	2015	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C18	51474035	-3479485	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 3
-C180	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C181	51488709	-170508	2015	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.125	0.06	Cluster 2
-C182	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.125	0.125	0.03	Cluster 2
-C183	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.125	0.06	0.03	Cluster 2
-C184	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C185	51488709	-170508	2015	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C186	51488709	-170508	2016	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.06	0.03	Cluster 1
-C187	51488709	-170508	2014	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C188	51488709	-170508	2014	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.125	0.06	0.03	Cluster 1
-C189	51488709	-170508	2014	UK	G54R	MAT1-2	Clinical	Resistant	>16	0.06	0.25	Cluster 2
-C19	51474035	-3479485	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	1	0.25	Cluster 1
-C190	51488709	-170508	2014	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.03	0.03	Cluster 2
-C191	51488709	-170508	2015	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.06	0.015	Cluster 2
-C2	51538694	-3125695	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.25	Cluster 1
-C20	51421121	-3178953	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	<0.25	Cluster 3
-C21	51815258	-5080186	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.025	Cluster 3
-C22	51578603	-3002994	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 3
-C220	53349805	-626031	2005	Republic of Ireland	Wildtype	MAT1-1	Environmental	Susceptible	0.06	0.06	0.06	Cluster 1
-C221	53349805	-626031	2005	Republic of Ireland	Wildtype	MAT1-2	Environmental	Susceptible	0.125	0.06	0.06	Cluster 1
-C222	53349805	-626031	2005	Republic of Ireland	Wildtype	MAT1-2	Environmental	Susceptible	0.06	0.06	0.03	Cluster 2
-C223	53349805	-626031	2005	Republic of Ireland	Wildtype	MAT1-1	Environmental	Susceptible	0.125	0.06	0.06	Cluster 1
-C23	51578603	-3002994	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 3
-C24	51578603	-3002994	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 3
-C246	52954783	-1158109	2012	UK	Wildtype	MAT1-2	Environmental	Susceptible	0.125	0.125	0.06	Cluster 1
-C25	51513482	-3184956	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	4	0.25	Cluster 1
-C26	51505766	-3173847	2015	UK	G54R	MAT1-2	Environmental	Resistant	>16	0.25	1	Cluster 1
-C27	51505766	-3173847	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	1	0.25	Cluster 1
-C272	52954783	-1158109	2012	UK	Wildtype	MAT1-2	Environmental	Susceptible	0.125	0.125	0.03	Cluster 2
-C275	5370039	-80657	2010	UK	Wildtype	MAT1-2	Environmental	Susceptible	0.125	0.125	0.06	Cluster 2
-C28	51505766	-3173847	2015	UK	TR34/L98H	MAT1-1	Environmental	Resistant	>16	4	0.25	Cluster 1
-C29	51505766	-3173847	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	4	0.5	Cluster 1
-C3	51538694	-3125695	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 3
-C30	51505766	-3173847	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.25	Cluster 1
-C31	51644322	-2674872	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 3
-C32	51481581	-317909	2013	UK	TR34/L98H	MAT1-2	Clinical	Resistant	>16	0.5	0.5	Cluster 3
-C33	51481581	-317909	2015	UK	TR34/L98H	MAT1-2	Clinical	Resistant	>16	1	0.5	Cluster 3
-C34	51481581	-317909	2015	UK	Wildtype	MAT1-1	Clinical	Susceptible	<0.03	0.06	0.03	Cluster 2
-C341	5160844	-124484	2017	UK	TR34/L98H	MAT1-1	Environmental	Resistant	>16	0.5	0.25	Cluster 1
-C342	5151284	-16145	2017	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	0.5	0.25	Cluster 1
-C343	5151284	-16145	2017	UK	Wildtype	MAT1-2	Environmental	Susceptible	0.06	0.06	0.03	Cluster 2
-C344	5151284	-16145	2017	UK	Wildtype	MAT1-1	Environmental	Susceptible	0.125	0.06	0.03	Cluster 2
-C345	5151284	-16145	2017	UK	Wildtype	MAT1-2	Environmental	Susceptible	0.25	0.06	0.03	Cluster 2
-C346	5151284	-16145	2017	UK	Wildtype	MAT1-2	Environmental	Susceptible	0.06	0.06	0.06	Cluster 2
-C35	51481581	-317909	2013	UK	Wildtype	MAT1-1	Clinical	Susceptible	4	2	0.5	Cluster 1
-C354	53349804	-626031	NA	Republic of Ireland	TR34/L98H	MAT1-2	Clinical	Resistant	2	2	0.5	Cluster 3
-C355	53349804	-626031	NA	Republic of Ireland	TR34/L98H	MAT1-1	Clinical	Resistant	0.25	0.06	0.03	Cluster 3
-C356	53349804	-626031	NA	Republic of Ireland	TR34/L98H	MAT1-2	Clinical	Susceptible	0.5	2	0.5	Cluster 1
-C357	53349804	-626031	NA	Republic of Ireland	TR34/L98H	MAT1-1	Environmental	N/A	NA	NA	NA	Cluster 3
-C358	53349804	-626031	NA	Republic of Ireland	TR46/Y121F/T289A	MAT1-2	Environmental	N/A	NA	NA	NA	Cluster 1
-C359	53349804	-626031	NA	Republic of Ireland	TR34/L98H	MAT1-2	Clinical	Resistant	32	2	0.5	Cluster 1
-C36	51481581	-317909	2013	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.25	0.06	Cluster 1
-C360	53349804	-626031	NA	Republic of Ireland	TR46/Y121F/T289A	MAT1-2	Environmental	N/A	NA	NA	NA	Cluster 1
-C361	53349804	-626031	NA	Republic of Ireland	Wildtype	MAT1-2	Clinical	N/A	NA	NA	NA	Cluster 2
-C362	53349804	-626031	NA	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.75	0.125	0.25	Cluster 1
-C363	53349804	-626031	NA	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.12	0.25	Cluster 2
-C364	57149715	-2094278	2016	Scotland	TR34/L98H	MAT1-1	Environmental	Resistant	4	0.5	NA	Cluster 1
-C365	57149715	-2094278	2016	Scotland	TR34	MAT1-1	Environmental	Resistant	16	2	NA	Cluster 1
-C366	57149715	-2094278	2016	Scotland	TR34/L98H	MAT1-1	Environmental	Resistant	4	0.25	NA	Cluster 1
-C367	57149715	-2094278	2016	Scotland	Wildtype	MAT1-2	Environmental	Susceptible	1	0.5	NA	Cluster 2
-C368	57149715	-2094278	2016	Scotland	TR34/L98H	MAT1-2	Environmental	Resistant	4	0.5	NA	Cluster 3
-C369	57149715	-2094278	2016	Scotland	TR34/L98H	MAT1-1	Environmental	Susceptible	1	0.5	NA	Cluster 1
-C37	51481581	-317909	2014	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.25	0.125	0.06	Cluster 2
-C38	51481581	-317909	2014	UK	Wildtype	MAT1-1	Clinical	Susceptible	0.125	0.25	0.06	Cluster 1
-C39	51481581	-317909	2014	UK	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.25	0.06	Cluster 2
-C4	51550026	-3122601	2015	UK	Wildtype	MAT1-2	Environmental	Resistant	>16	8	<0.5	Cluster 2
 C40	53349805	-626031	2013	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.25	0.03	Cluster 2
-C41	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.25	0.25	0.25	Cluster 2
-C42	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.25	0.25	0.12	Cluster 2
-C43	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.12	0.015	Cluster 2
-C44	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.12	0.015	Cluster 2
-C45	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.12	0.015	Cluster 2
-C46	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.12	0.015	Cluster 2
-C47	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.015	0.015	Cluster 2
-C48	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.015	0.015	Cluster 2
-C49	53349805	-626031	2012	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.12	0.25	0.06	Cluster 2
 C5	51441624	-3276812	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 3
-C50	53349805	-626031	2012	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.25	0.12	0.06	Cluster 2
-C51	53349805	-626031	2013	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.25	0.03	Cluster 2
-C52	53349805	-626031	2012	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	<0.015	0.12	0.03	Cluster 2
 C53	53349805	-626031	2012	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.25	0.12	0.06	Cluster 2
 C54	53349805	-626031	2012	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.25	0.03	Cluster 2
 C55	53349805	-626031	2013	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.25	0.015	Cluster 2
-C56	53349805	-626031	2010	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.12	0.12	0.015	Cluster 2
-C57	53349805	-626031	2010	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.06	0.06	0.03	Cluster 2
-C58	53349805	-626031	2012	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.03	0.12	0.015	Cluster 1
-C59	53349805	-626031	2013	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.25	0.12	0.06	Cluster 1
-C6	51441624	-3276812	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.25	Cluster 1
-C60	53349805	-626031	2013	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.12	0.12	0.03	Cluster 1
-C61	53349805	-626031	2013	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.03	0.25	0.015	Cluster 1
 C62	53349805	-626031	2013	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.03	0.25	0.015	Cluster 1
-C63	53349805	-626031	2013	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.03	0.12	0.015	Cluster 1
 C64	53349805	-626031	2013	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.25	0.25	0.12	Cluster 1
-C65	53349805	-626031	2010	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.03	0.12	0.015	Cluster 1
-C66	53349805	-626031	2010	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.03	0.12	0.015	Cluster 1
-C67	53349805	-626031	2010	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.25	0.015	Cluster 2
-C68	53349805	-626031	2013	Republic of Ireland	TR34/L98H	MAT1-2	Clinical	Susceptible	0.25	0.25	0.06	Cluster 3
-C69	53349805	-626031	NA	Republic of Ireland	TR34/L98H	MAT1-2	Clinical	Susceptible	1	0.5	0.25	Cluster 3
-C7	51443712	-3302592	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	4	0.25	Cluster 1
-C70	53349805	-626031	NA	Republic of Ireland	TR34/L98H	MAT1-2	Clinical	Susceptible	1	1	0.25	Cluster 3
-C71	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.12	0.03	0.008	Cluster 2
-C72	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.03	0.12	0.015	Cluster 2
-C73	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.12	0.015	Cluster 2
-C74	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.12	0.015	Cluster 2
-C75	53349805	-626031	NA	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.25	0.25	0.12	Cluster 1
-C76	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.03	0.12	0.015	Cluster 2
-C77	53349805	-626031	2011	Republic of Ireland	Wildtype	MAT1-2	Clinical	Susceptible	0.06	0.25	0.03	Cluster 2
-C78	53349805	-626031	2014	Republic of Ireland	TR34/L98H	MAT1-1	Environmental	N/A	NA	NA	NA	Cluster 3
-C79	53349805	-626031	2014	Republic of Ireland	TR46/Y121F/T289A	MAT1-2	Environmental	N/A	NA	NA	NA	Cluster 1
-C8	51425458	-3556041	2015	UK	TR34/L98H	MAT1-2	Environmental	Resistant	>16	2	0.12	Cluster 3
-C80	53349805	-626031	2014	Republic of Ireland	TR34/L98H	MAT1-2	Environmental	N/A	NA	NA	NA	Cluster 1
-C81	53349805	-626031	2015	Republic of Ireland	Wildtype	MAT1-1	Clinical	Susceptible	0.25	0.25	0.06	Cluster 2
-C82	53349805	-626031	2015	Republic of Ireland	TR34/L98H	MAT1-2	Clinical	Resistant	4	2	1	Cluster 1
-C83	53349805	-626031	2015	Republic of Ireland	TR34/L98H	MAT1-2	Clinical	Resistant	16	2	0.5	Cluster 3
-C84	53349805	-626031	2015	Republic of Ireland	TR34/L98H	MAT1-2	Clinical	Resistant	4	4	0.5	Cluster 3
-C85	53349805	-626031	2016	Republic of Ireland	TR34/L98H	MAT1-2	Environmental	N/A	NA	NA	NA	Cluster 1
-C86	53349805	-626031	2016	Republic of Ireland	TR34/L98H	MAT1-1	Environmental	N/A	NA	NA	NA	Cluster 1
-C87	53349805	-626031	2015	Republic of Ireland	TR46/Y121F/T289A	MAT1-1	Environmental	N/A	NA	NA	NA	Cluster 2
-C88	53349805	-626031	2015	Republic of Ireland	TR34/L98H	MAT1-2	Environmental	N/A	NA	NA	NA	Cluster 1
-C89	53349805	-626031	2015	Republic of Ireland	TR46/Y121F/T289A	MAT1-2	Environmental	N/A	NA	NA	NA	Cluster 1
-C91	53349805	-626031	2015	Republic of Ireland	TR46/Y121F/T289A	MAT1-1	Environmental	N/A	NA	NA	NA	Cluster 2
-C92	53349805	-626031	2015	Republic of Ireland	TR34/L98H	MAT1-2	Environmental	N/A	NA	NA	NA	Cluster 1
-C93	53349805	-626031	2015	Republic of Ireland	TR46/Y121F/T289A	MAT1-2	Environmental	N/A	NA	NA	NA	Cluster 1
-C95	53349805	-626031	2015	Republic of Ireland	Wildtype	MAT1-1	Environmental	N/A	NA	NA	NA	Cluster 2
-C96	53349805	-626031	2015	Republic of Ireland	Wildtype	MAT1-2	Environmental	N/A	NA	NA	NA	Cluster 2
-C99	55598676	-272191	2013	UK	TR34/L98H	MAT1-1	Clinical	Resistant	2	2	0.5	Cluster 1
