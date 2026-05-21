@@ -174,7 +174,7 @@ ui <- page_sidebar(
         card_body(
           div(class = "scrollable-tab-content",
             div(class = "info-box",
-                p(icon("info-circle"), "Generate DATASET_HEATMAP annotations. Upload a matrix with IDs in the first column and sample/field names as headers.")
+                p(icon("info-circle"), "Generate DATASET_HEATMAP annotations. Upload a matrix with IDs defined in chosen ID column and sample/field names as headers.")
             ),
             
             uiOutput("heatmap_settings_ui"),
