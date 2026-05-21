@@ -19,3 +19,4 @@ dependencies:
   - openssl
   - r-zip
   - conda-forge::r-ape
+  - bioconda::bioconductor-biostrings

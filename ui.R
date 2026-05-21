@@ -185,6 +185,25 @@ ui <- page_sidebar(
           )
         )
       ),
+
+      # Alignment tab
+      nav_panel(
+        "Alignment",
+        icon = icon("align-left"),
+        card_body(
+          div(class = "scrollable-tab-content",
+            div(class = "info-box",
+                p(icon("info-circle"), "Generate DATASET_ALIGNMENT annotations. Upload a FASTA alignment file to display sequence alignments on the tree.")
+            ),
+            
+            uiOutput("alignment_settings_ui"),
+            
+            tags$hr(),
+            
+            uiOutput("alignment_download_card")
+          )
+        )
+      ),
       
       # Label Styles tab
       nav_panel(

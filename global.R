@@ -15,6 +15,7 @@ library(RColorBrewer)
 library(shinyWidgets)
 library(zip)
 library(ape)
+library(Biostrings)
 
 # ---------- Helper Functions ----------
 

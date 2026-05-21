@@ -402,6 +402,7 @@ server <- function(input, output, session) {
   source("tabs/bar_chart.R", local = TRUE)
   source("tabs/multi_bar_chart.R", local = TRUE)
   source("tabs/heatmap.R", local = TRUE)
+  source("tabs/alignment.R", local = TRUE)
   source("tabs/styles.R", local = TRUE)
   source("tabs/metadata.R", local = TRUE)
   source("tabs/labels.R", local = TRUE)
