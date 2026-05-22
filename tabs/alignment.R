@@ -18,6 +18,24 @@ output$alignment_settings_ui <- renderUI({
       )
     ),
     
+      card(
+        card_header("Alignment Type"),
+        card_body(
+            selectInput(
+            "alignment_type",
+            NULL,
+            choices = c(
+                "Protein (amino acids)" = "aa",
+                "DNA" = "dna"
+            ),
+            selected = isolate(input$alignment_type) %||% "aa",
+            width = "200px"
+            ),
+            div(class = "help-text",
+                "Select the type of sequences in your alignment file")
+            )
+        ),
+
     # Only show settings if alignment is loaded
     conditionalPanel(
       condition = "output.alignment_loaded",
@@ -36,23 +54,6 @@ output$alignment_settings_ui <- renderUI({
         )
       ),
       
-      card(
-        card_header("Alignment Type"),
-        card_body(
-            selectInput(
-            "alignment_type",
-            NULL,
-            choices = c(
-                "Protein (amino acids)" = "aa",
-                "DNA" = "dna"
-            ),
-            selected = isolate(input$alignment_type) %||% "aa",
-            width = "200px"
-            ),
-            div(class = "help-text",
-                "Select the type of sequences in your alignment file")
-            )
-        ),
       card(
         card_header("Display Options"),
         card_body(
@@ -98,7 +99,7 @@ output$alignment_settings_ui <- renderUI({
             width = "150px"
           ),
           div(class = "help-text",
-              "Last residue of alignment to display (max ~4000)"),
+              "Last residue of alignment to display (max 4000)"),
           
           tags$hr(),
           
@@ -196,28 +197,6 @@ output$alignment_settings_ui <- renderUI({
                 tags$hr()
               ),
               
-              conditionalPanel(
-                condition = "input.alignment_highlight_type != 'none'",
-                div(
-                  style = "margin-bottom: 1rem;",
-                  checkboxInput(
-                    "alignment_highlight_disagreements",
-                    "Highlight disagreements (non-matching residues)",
-                    value = isolate(input$alignment_highlight_disagreements) %||% FALSE
-                  )
-                ),
-                
-                div(
-                  style = "margin-bottom: 1rem;",
-                  checkboxInput(
-                    "alignment_colored_dots",
-                    "Color dots based on underlying residue",
-                    value = isolate(input$alignment_colored_dots) %||% TRUE
-                  )
-                ),
-                
-                tags$hr()
-              ),
               
               tags$h6(style = "color: #2C5F8D;", "Consensus Settings"),
               
@@ -430,33 +409,25 @@ alignment_output <- reactive({
   content <- c(content, paste("END_POSITION", alignment_end_pos, sep = ","))
   content <- c(content, "")
   
-  # Highlighting options
-  if(alignment_highlight_type != "none") {
+    # Highlighting options
+    if(alignment_highlight_type != "none") {
     content <- c(content, paste("HIGHLIGHT_TYPE", alignment_highlight_type, sep = ","))
     
     if(alignment_highlight_type == "reference" && alignment_references != "") {
-      ref_list <- trimws(unlist(strsplit(alignment_references, ",")))
-      content <- c(content, paste("HIGHLIGHT_REFERENCES", paste(ref_list, collapse = ","), sep = ","))
-      
-      # Reference box styling
-      if(alignment_mark_references) {
+        ref_list <- trimws(unlist(strsplit(alignment_references, ",")))
+        content <- c(content, paste("HIGHLIGHT_REFERENCES", paste(ref_list, collapse = ","), sep = ","))
+        
+        # Reference box styling
+        if(alignment_mark_references) {
         content <- c(content, "MARK_REFERENCES,1")
         content <- c(content, paste("REFERENCE_BOX_BORDER_WIDTH", alignment_ref_box_border_width, sep = ","))
         content <- c(content, paste("REFERENCE_BOX_BORDER_COLOR", alignment_ref_box_border_color, sep = ","))
         content <- c(content, paste("REFERENCE_BOX_FILL_COLOR", alignment_ref_box_fill_color, sep = ","))
-      }
-    }
-    
-    if(alignment_highlight_disagreements) {
-      content <- c(content, "HIGHLIGHT_DISAGREEMENTS,1")
-    }
-    
-    if(alignment_colored_dots) {
-      content <- c(content, "COLORED_DOTS,1")
+        }
     }
     
     content <- c(content, "")
-  }
+    }
   
   # Consensus settings
   if(alignment_display_consensus) {
@@ -466,8 +437,8 @@ alignment_output <- reactive({
     if(alignment_ignore_gaps) {
       content <- c(content, "IGNORE_GAPS,1")
     }
-    
-    content <- c(content, "")
+  } else {
+    content <- c(content, "DISPLAY_CONSENSUS,0")
   }
   
 
