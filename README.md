@@ -30,7 +30,7 @@ An example dataset is provided in the `example_data/` folder. You can use this d
 - `tree.nwk` – phylogenetic tree
 - `metadata.csv / .tsv / .xlsx` – tabular metadata
 
-This dataset is derived from a published open-access study and has been used for demonstration purposes.
+This dataset is a subset from a published open-access study and has been used for demonstration purposes.
 
 > Rhodes, J., Abdolrasouli, A., Dunne, K. et al. Population genomics confirms acquisition of drug-resistant Aspergillus fumigatus infection by humans from the environment. Nat Microbiol 7, 663–674 (2022). https://doi.org/10.1038/s41564-022-01091-2
 
@@ -122,6 +122,52 @@ Navigate through tabs to create different annotation types:
 ![workflow_multi_bar](README_figures/workflow_multi_bar_results.png)  
 *Figure 8: Multi-value bar configuration with side stacked layout (left) and iTOL output (right)*
 
+### `Heatmap`
+- Visualize multiple numeric columns as a color-coded heatmap
+- **Color Options**:
+  - ColorBrewer palettes: Choose from sequential or diverging color schemes
+  - Manual colors: Define 2-color (min/max) or 3-color (min/mid/max) gradients
+  - Reverse palette: Flip the color scale direction
+- **Display Settings**:
+  - Cell width: Adjust the size of individual heatmap cells
+  - Border styling: Optional borders around cells with customizable width and color
+  - Label customization: Control label size, rotation, and positioning
+  - Missing values (NA) are displayed with a customizable color (default: white) and marked as "X"
+  - Automatically creates a legend showing the color scale
+- **Tree Integration (optional)**:
+  - When a phylogenetic tree is uploaded, enable "Add FIELD_TREE" to display a tree structure above the heatmap
+  - Fields will be ordered according to the tree topology
+
+![workflow_heatmap](README_figures/workflow_heatmap_results.png)  
+*Figure 9: Heatmap without tree uploaded (left) and with tree uploaded (right)*
+
+### `Sequence Alignment`
+- Display protein or DNA sequence alignments alongside your phylogenetic tree
+- **Configuration**:
+  - Upload a FASTA format alignment file (.fasta, .fa, .fna, .faa)
+  - Select alignment type: Protein (amino acids) or DNA
+  - Specify position range to display (start/end residue numbers, max 4000 residues)
+- **Color Schemes**:
+  - Choose from multiple coloring schemes based on amino acid properties:
+    - Clustal: Standard Clustal coloring by amino acid properties
+    - Zappo: Physico-chemical properties
+    - Taylor: Residue type classification
+    - Hydrophobicity, Helix/Strand/Turn propensity, Buried index
+  - Or display without coloring
+- **Highlighting Options**:
+  - Consensus highlighting: Highlight positions matching the consensus sequence
+  - Reference highlighting: Highlight differences from specified reference sequences
+  - Mark reference sequences with customizable colored boxes
+- **Display Features**:
+  - Optional consensus sequence display below alignment (with adjustable threshold)
+  - Conservation graph showing position-by-position conservation percentages
+  - Inverse gap coloring to emphasize gaps
+  - Adjustable font size and margin settings
+- Sequence IDs in the FASTA file must match your tree tip labels
+
+![workflow_alignment](README_figures/workflow_alignment_results.png)  
+*Figure 10: Protein sequence alignment in iTOL*
+
 ### `Label Styles`
 - Customize the appearance of tree tip labels based on metadata values
 - **Configuration Options**:
@@ -133,7 +179,7 @@ Navigate through tabs to create different annotation types:
 - Note: Only affects label styling; does not modify branch or node properties
 
 ![workflow_label_styles](README_figures/workflow_label_styles_results.png)  
-*Figure 9: Label style settings (left) and iTOL output (right)*
+*Figure 10: Label style settings (left) and iTOL output (right)*
 
 ### `Metadata`
 - Export all selected columns in iTOL metadata format
@@ -141,7 +187,7 @@ Navigate through tabs to create different annotation types:
 - All selected columns are included as-is without filtering
 
 ![workflow_metadata](README_figures/workflow_metadata.png)  
-*Figure 10: Node hover without metadata (left) and with metadata (right)*
+*Figure 11: Node hover without metadata (left) and with metadata (right)*
 
 ### `Change Labels`
 - Replace tree tip labels with alternative values from your data
