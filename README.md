@@ -29,6 +29,9 @@ An example dataset is provided in the `example_data/` folder. You can use this d
 
 - `tree.nwk` – phylogenetic tree
 - `metadata.csv / .tsv / .xlsx` – tabular metadata
+- `heatmap_data.tsv` - demo heatmap data
+- `protein_alignment.fasta` - demo protein alignment sequence
+- `DNA_alignment.fasta` - demo DNA alignment sequence
 
 This dataset is a subset from a published open-access study and has been used for demonstration purposes.
 
@@ -124,6 +127,7 @@ Navigate through tabs to create different annotation types:
 
 ### `Heatmap`
 - Visualize multiple numeric columns as a color-coded heatmap
+- Best is to upload a heatmap table formatted as `example/data/heatmap_data.tsv`
 - **Color Options**:
   - ColorBrewer palettes: Choose from sequential or diverging color schemes
   - Manual colors: Define 2-color (min/max) or 3-color (min/mid/max) gradients
