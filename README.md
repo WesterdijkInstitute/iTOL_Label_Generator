@@ -2,6 +2,20 @@
 
 A Shiny application for generating [iTOL](https://itol.embl.de/) (Interactive Tree of Life) annotation files from tabular metadata, enabling rapid visualization of phylogenetic data.
 
+# Abstract
+Manual annotation of phylogenetic trees in iTOL can be time-consuming and error-prone, particularly when working with large datasets. While custom scripts can automate parts of this process, they often require substantial setup and may be difficult to reproduce or adapt across projects.
+
+The iTOL Label Generator is a Shiny application that streamlines the creation of iTOL annotation files directly from tabular metadata. Users can rapidly generate a variety of annotation types, including:
+
+* Symbol annotations with customizable shapes and colors
+* Binary presence/absence patterns
+* Simple and multi-value bar charts
+* Heatmaps
+* Label styling and replacements
+* Sequence alignments
+
+By automating annotation file generation, the application substantially reduces the time required to prepare complex tree visualizations.
+
 # Installation
 Clone the repository and go to it:
 
