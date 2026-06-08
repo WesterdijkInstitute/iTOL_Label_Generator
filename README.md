@@ -2,6 +2,8 @@
 
 A Shiny application for generating [iTOL](https://itol.embl.de/) (Interactive Tree of Life) annotation files from tabular metadata, enabling rapid visualization of phylogenetic data.
 
+**Currently platform win-64 not supported**
+
 # Abstract
 Manual annotation of phylogenetic trees in iTOL can be time-consuming and error-prone, particularly when working with large datasets. While custom scripts can automate parts of this process, they often require substantial setup and may be difficult to reproduce or adapt across projects.
 
