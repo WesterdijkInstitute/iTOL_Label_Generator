@@ -20,7 +20,7 @@ By automating annotation file generation, the application substantially reduces 
 Clone the repository and go to it:
 
 ```bash
-git clone https://github.com/ManuelLeeuwerik/iTOL_Label_Generator.git
+git clone https://github.com/WesterdijkInstitute/iTOL_Label_Generator.git
 
 cd iTOL_Label_Generator/
 ```
